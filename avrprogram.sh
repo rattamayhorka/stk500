@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+rm -rf ./temp
 mkdir ./temp
 echo "generando carpeta temporal"
 sleep 2
@@ -13,7 +14,7 @@ echo "#include <avr/io.h>" >> ./temp/main.c
 echo "#define F_CPU 4000000UL" >> ./temp/main.c
 echo "#include <util/delay.h>" >> ./temp/main.c
 echo "#include <avr/interrupt.h>" >> ./temp/main.c
-echo "int main(void){ DDRD = 0xFF; while(1) {PORTD = 0x00; _delay_ms(500); PORTD= 0xFF; _delay_ms(500);}}" >> ./temp/main.c
+echo "int main(void){ DDRB = 0xFF; while(1) {PORTB = 0x00; _delay_ms(200); PORTB= 0xFF; _delay_ms(200);}}" >> ./temp/main.c
 
 avr-gcc -v -mmcu=atmega32 -Os ./temp/main.c -o ./temp/main.o
 echo "generando archivo object"
