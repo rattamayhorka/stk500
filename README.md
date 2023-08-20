@@ -10,14 +10,13 @@ para programar un microcontrolador debes seguir estos pasos:
 - las librerías a agregar (ejemplo lcd.h)
 - modifica tu codigo fuente.
 
-compilar: 
+##compilar: 
 corre el codigo 
-# make
+make
 
-programar el microcontrolador: 
+##programar el microcontrolador: 
 
-# make program
+make program
 
-limpiar archivos innecesarios: 
-
-# make clean
+##limpiar archivos innecesarios: 
+make clean
